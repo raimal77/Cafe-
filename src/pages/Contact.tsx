@@ -112,11 +112,11 @@ export default function Contact() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164132!2d-73.9878441234255!3d40.75797873483563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1712740000000!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
-                  style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)' }} 
+                  style={{ border: 0 }} 
                   allowFullScreen={true} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="opacity-50 group-hover:opacity-70 transition-opacity duration-1000"
+                  className="opacity-100 transition-opacity duration-1000"
                 ></iframe>
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg-primary/40 to-transparent" />
               </div>

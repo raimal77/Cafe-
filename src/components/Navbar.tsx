@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight, ArrowRight, Navigation, Home, Coffee, Image as ImageIcon, Info } from 'lucide-react';
+import { Menu, X, ChevronRight, ArrowRight, MapPin, Home, Coffee, Image as ImageIcon, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
     { name: 'Menu', path: '/menu', icon: Coffee },
     { name: 'Our Café', path: '/gallery', icon: ImageIcon },
     { name: 'About', path: '/about', icon: Info },
-    { name: 'Visit us', path: '/contact', icon: Navigation },
+    { name: 'Visit us', path: '/contact', icon: MapPin },
   ];
 
   const handleGetDirections = (e: React.MouseEvent) => {
@@ -97,7 +97,7 @@ export default function Navbar() {
               onClick={handleGetDirections}
               className="group flex items-center space-x-3 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
             >
-              <Navigation className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform" />
+              <MapPin className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform" />
               <span>Get Directions</span>
             </button>
           </div>
@@ -184,7 +184,7 @@ export default function Navbar() {
                       onClick={handleGetDirections}
                       className="flex items-center gap-4 w-full px-7 py-5 rounded-full shadow-lg group transition-all duration-300 active:scale-[0.97] border bg-white/5 hover:bg-white/10 border-white/5"
                     >
-                      <Navigation className="w-5 h-5 transition-all duration-300 text-text-secondary group-hover:text-gold-primary group-hover:scale-110" />
+                      <MapPin className="w-5 h-5 transition-all duration-300 text-text-secondary group-hover:text-gold-primary group-hover:scale-110" />
                       <span className="font-bold uppercase tracking-[0.2em] text-sm transition-colors text-text-primary group-hover:text-gold-primary">
                         Get Directions
                       </span>
