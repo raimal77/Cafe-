@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight, ArrowRight, MapPin, Home, Coffee, Image as ImageIcon, Info } from 'lucide-react';
+import { Menu, X, ChevronRight, ArrowRight, MapPin, Home, Coffee, Image as ImageIcon, Info, Store } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
     { name: 'Menu', path: '/menu', icon: Coffee },
     { name: 'Our Café', path: '/gallery', icon: ImageIcon },
     { name: 'About', path: '/about', icon: Info },
-    { name: 'Visit us', path: '/contact', icon: MapPin },
+    { name: 'Visit us', path: '/contact', icon: Store },
   ];
 
   const handleGetDirections = (e: React.MouseEvent) => {

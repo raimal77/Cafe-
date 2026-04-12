@@ -22,7 +22,8 @@ export default function Contact() {
           <p className="text-text-secondary max-w-xl mx-auto text-base font-light leading-relaxed opacity-70">We're here for you. Say hi or plan your next visit.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24 lg:mb-32 lg:items-start max-w-6xl mx-auto">
+        <div className="flex flex-col gap-12 lg:gap-16 mb-24 lg:mb-32 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-start">
           {/* Form Panel */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -67,14 +68,13 @@ export default function Contact() {
             </form>
           </motion.div>
 
-          {/* Info & Map */}
+          {/* Info Cards */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
             className="flex flex-col space-y-10 will-change-transform-opacity lg:space-y-8 lg:col-span-5 hardware-accelerated"
           >
-            {/* Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="glass-panel p-8 rounded-[2.5rem] flex items-start space-x-5 group shadow-lg">
                 <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-primary/10 transition-colors border border-white/5">
@@ -104,33 +104,39 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+          </motion.div>
+          </div>
 
-            {/* Clean Map Section */}
-            <div className="space-y-6">
-              <div className="rounded-[3rem] overflow-hidden relative h-[300px] lg:h-[250px] border border-white/10 shadow-2xl group">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164132!2d-73.9878441234255!3d40.75797873483563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1712740000000!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={true} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="opacity-100 transition-opacity duration-1000"
-                ></iframe>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg-primary/40 to-transparent" />
-              </div>
-              <div className="flex justify-center">
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-4 px-8 py-4 rounded-xl bg-gradient-to-br from-[#B38B4D] to-[#C5A059] text-bg-primary font-bold tracking-[0.2em] uppercase text-[9px] hover:scale-[1.03] active:scale-[0.97] transition-all duration-500 shadow-lg hover:shadow-gold-primary/20 border border-white/20 group relative overflow-hidden"
-                >
-                  <MapPin className="w-3.5 h-3.5 relative z-10" />
-                  <span className="relative z-10">Get Directions</span>
-                </a>
-              </div>
+          {/* Clean Map Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
+            className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 will-change-transform-opacity hardware-accelerated"
+          >
+            <div className="rounded-[3rem] overflow-hidden relative h-[300px] lg:h-[350px] border border-white/10 shadow-2xl group flex-1 w-full">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164132!2d-73.9878441234255!3d40.75797873483563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1712740000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-100 transition-opacity duration-1000"
+              ></iframe>
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg-primary/40 to-transparent" />
+            </div>
+            <div className="flex justify-center lg:justify-start lg:shrink-0">
+              <a 
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-4 px-8 py-4 rounded-xl bg-gradient-to-br from-[#B38B4D] to-[#C5A059] text-bg-primary font-bold tracking-[0.2em] uppercase text-[9px] hover:scale-[1.03] active:scale-[0.97] transition-all duration-500 shadow-lg hover:shadow-gold-primary/20 border border-white/20 group relative overflow-hidden"
+              >
+                <MapPin className="w-3.5 h-3.5 relative z-10" />
+                <span className="relative z-10">Get Directions</span>
+              </a>
             </div>
           </motion.div>
         </div>

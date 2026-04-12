@@ -26,7 +26,7 @@ export default function Menu() {
     : menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <div className="w-full pt-20 min-h-screen relative overflow-hidden bg-[#0A0A0A]">
+    <div className="w-full pt-20 lg:pt-28 min-h-screen relative overflow-hidden bg-[#0A0A0A]">
       {/* Visible Background Image */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Coffee, Star, Clock, Shield, MapPin, Instagram, MessageCircle, ExternalLink, Users, Heart, Briefcase, PartyPopper, ChevronDown } from 'lucide-react';
+import { ArrowRight, Coffee, Star, Clock, Shield, MapPin, Instagram, MessageCircle, ExternalLink, Users, Heart, Briefcase, PartyPopper, ChevronDown, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const faqs = [
@@ -26,46 +26,46 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20 lg:pt-0 lg:items-center">
-        <div className="absolute inset-0 z-0 bg-[#0D0D0D] lg:left-1/2 lg:w-1/2 lg:inset-y-12 lg:right-12 lg:rounded-[3rem] lg:overflow-hidden lg:shadow-2xl">
+        <div className="absolute inset-0 z-0 bg-[#0D0D0D]">
           <motion.img 
             initial={{ scale: 1.05, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.45 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=60&w=1200&auto=format&fit=crop&fm=webp" 
             alt="Premium cafe meal and ambience" 
-            className="w-full h-full object-cover lg:opacity-90 lg:hover:scale-[1.03] transition-transform duration-300 will-change-transform-opacity animate-float-slow img-cinematic"
+            className="w-full h-full object-cover lg:opacity-50 lg:hover:scale-[1.03] transition-transform duration-300 will-change-transform-opacity animate-float-slow img-cinematic"
             referrerPolicy="no-referrer"
             fetchPriority="high"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/10 to-bg-primary lg:bg-gradient-to-r lg:from-bg-primary lg:via-transparent lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/10 to-bg-primary lg:bg-gradient-to-b lg:from-bg-primary/80 lg:via-bg-primary/30 lg:to-bg-primary" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center w-full lg:grid lg:grid-cols-2 lg:gap-12 lg:text-left lg:items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center w-full lg:flex-col lg:items-center lg:text-center lg:justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="max-w-5xl lg:max-w-none will-change-transform-opacity hardware-accelerated"
+            className="max-w-5xl lg:max-w-3xl will-change-transform-opacity hardware-accelerated"
           >
             <span className="inline-block text-gold-primary text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8 font-bold">
               Your Everyday Café Spot
             </span>
-            <h1 className="text-5xl sm:text-7xl md:text-[9rem] lg:text-[7.5rem] font-display font-bold leading-[0.85] mb-10 uppercase tracking-tighter hover:opacity-90 transition-opacity duration-300">
-              Good Food, <br />
+            <h1 className="text-5xl sm:text-7xl md:text-[9rem] lg:text-[5.5rem] font-display font-bold leading-[0.85] mb-10 uppercase tracking-tighter hover:opacity-90 transition-opacity duration-300">
+              Good Food, <br className="lg:hidden" />
               <span className="text-gradient">Great Vibes</span>
             </h1>
-            <div className="backdrop-blur-sm bg-black/20 p-4 md:p-5 rounded-2xl border border-white/5 mb-14 max-w-2xl mx-auto lg:mx-0 shadow-lg">
-              <p className="text-base md:text-xl text-text-secondary leading-relaxed font-light opacity-100 text-white">
+            <div className="backdrop-blur-sm bg-black/20 p-4 md:p-5 rounded-2xl border border-white/5 mb-14 max-w-2xl mx-auto shadow-lg">
+              <p className="text-base md:text-xl lg:text-base text-text-secondary leading-relaxed font-light opacity-100 text-white">
                 Bites, Brews & Chill. Experience a premium sanctuary crafted for your best moments and everyday cravings.
               </p>
             </div>
             
-            <div className="flex flex-col lg:flex-row items-center lg:justify-start gap-10 lg:gap-8">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-6">
               <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}>
                 <Link
                   to="/menu"
-                  className="group px-12 py-5 rounded-full bg-accent-gradient text-bg-primary font-bold tracking-[0.2em] uppercase text-[10px] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-[0_10px_30px_rgba(197,160,89,0.2)] flex items-center space-x-3 shine-effect border border-white/10 relative overflow-hidden"
+                  className="group px-12 py-5 lg:px-8 lg:py-4 rounded-full bg-accent-gradient text-bg-primary font-bold tracking-[0.2em] uppercase text-[10px] lg:text-[9px] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-[0_10px_30px_rgba(197,160,89,0.2)] flex items-center space-x-3 shine-effect border border-white/10 relative overflow-hidden"
                 >
                   <span>Explore Menu</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -73,13 +73,13 @@ export default function Home() {
               </motion.div>
               
               <div className="flex items-center gap-6">
-                <a href="#" className="flex items-center space-x-3 px-6 py-3 rounded-full bg-transparent border border-[#B38B4D]/40 text-gold-primary hover:bg-[#B38B4D] hover:text-bg-primary transition-all duration-300 group cta-glow-instagram shine-effect">
+                <a href="#" className="flex items-center space-x-3 px-6 py-3 lg:px-5 lg:py-2.5 rounded-full bg-transparent border border-[#B38B4D]/40 text-gold-primary hover:bg-[#B38B4D] hover:text-bg-primary transition-all duration-300 group cta-glow-instagram shine-effect">
                   <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] tracking-[0.2em] uppercase font-bold">Instagram</span>
+                  <span className="text-[9px] lg:text-[8px] tracking-[0.2em] uppercase font-bold">Instagram</span>
                 </a>
-                <a href="#" className="flex items-center space-x-3 px-6 py-3 rounded-full bg-transparent border border-[#B38B4D]/40 text-gold-primary hover:bg-[#B38B4D] hover:text-bg-primary transition-all duration-500 group cta-glow-whatsapp shine-effect">
+                <a href="#" className="flex items-center space-x-3 px-6 py-3 lg:px-5 lg:py-2.5 rounded-full bg-transparent border border-[#B38B4D]/40 text-gold-primary hover:bg-[#B38B4D] hover:text-bg-primary transition-all duration-500 group cta-glow-whatsapp shine-effect">
                   <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] tracking-[0.2em] uppercase font-bold">WhatsApp</span>
+                  <span className="text-[9px] lg:text-[8px] tracking-[0.2em] uppercase font-bold">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -99,8 +99,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-6 px-6 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
-          <div className="min-w-[8px] lg:hidden" />
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-6 px-4 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto ml-[20px]">
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Interiors", subtitle: "Comfortable & aesthetic seating" },
             { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Fresh Food", subtitle: "Gourmet bites prepared daily" },
@@ -144,8 +143,7 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-[1400px] mx-auto">
-          <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-10 px-6 md:px-12 pb-20 hide-scrollbar snap-x snap-mandatory perspective-1000">
-            <div className="min-w-[8px] lg:hidden" />
+          <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-10 px-4 md:px-12 pb-20 hide-scrollbar snap-x snap-mandatory perspective-1000">
             {[
               { icon: Heart, title: "Dates", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=60&w=800&auto=format&fit=crop&fm=webp" },
               { icon: Users, title: "Friends Hangout", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=60&w=800&auto=format&fit=crop&fm=webp" },
@@ -185,8 +183,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-8 px-6 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
-          <div className="min-w-[8px] lg:hidden" />
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-8 px-4 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Lounge" },
             { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Outdoor Seating" },
@@ -224,7 +221,7 @@ export default function Home() {
         <div className="flex justify-center mt-6">
               <Link to="/gallery" className="group px-8 py-4 rounded-full bg-accent-gradient text-bg-primary font-bold tracking-[0.3em] uppercase text-[9px] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-xl flex items-center space-x-3 shine-effect cta-glow-whatsapp">
                 <span>View All Images</span>
-                <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                <Eye className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </Link>
         </div>
       </section>
@@ -289,9 +286,8 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-[1400px] mx-auto perspective-1000">
-          <div className="flex overflow-x-auto hide-scrollbar gap-6 px-6 md:px-12 pb-12 snap-x snap-mandatory lg:gap-8">
+          <div className="flex overflow-x-auto hide-scrollbar gap-6 px-4 md:px-12 pb-12 snap-x snap-mandatory lg:gap-8">
             <div className="flex gap-6 lg:gap-8">
-              <div className="min-w-[8px] lg:hidden" />
               {[
                 { name: "Rohit Sharma", rating: 5, text: "Amazing ambience and food. The coffee here is truly world-class. Perfect spot for a weekend hangout.", time: "3 days ago", initial: "R" },
                 { name: "Priya Patel", rating: 5, text: "Great place to chill with friends. The staff is very polite and the music is just right. Loved the pasta!", time: "1 week ago", initial: "P" },

@@ -56,8 +56,8 @@ export default function Gallery() {
         </motion.div>
 
         {/* Category Filters - Mobile Optimized */}
-        <div className="flex overflow-x-auto hide-scrollbar gap-3 mb-16 pb-4 -mx-6 md:mx-0 snap-x lg:justify-center lg:gap-4">
-          <div className="flex gap-3 pl-12 md:pl-0">
+        <div className="flex overflow-x-auto hide-scrollbar gap-3 mb-16 pb-4 -mx-6 md:mx-0 snap-x lg:justify-center lg:gap-4 ml-[-9px]">
+          <div className="flex gap-3 pl-6 md:pl-0">
             {categories.map((cat, i) => (
               <motion.button
                 key={cat}
