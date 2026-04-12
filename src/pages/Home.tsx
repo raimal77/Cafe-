@@ -1,8 +1,21 @@
-import { motion } from 'motion/react';
-import { ArrowRight, Coffee, Star, Clock, Shield, MapPin, Instagram, MessageCircle, ExternalLink, Users, Heart, Briefcase, PartyPopper } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, Coffee, Star, Clock, Shield, MapPin, Instagram, MessageCircle, ExternalLink, Users, Heart, Briefcase, PartyPopper, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const faqs = [
+  { q: "What are your opening hours?", a: "We are open every day from 8:00 AM to 11:00 PM." },
+  { q: "Do you have vegetarian options?", a: "Yes, we have a wide range of pure vegetarian burgers, pizzas, and snacks." },
+  { q: "Is this café good for small gatherings or dates?", a: "Absolutely! We have cozy corners and a great vibe perfect for dates and hanging out with friends." },
+  { q: "Do you offer takeaway or WhatsApp orders?", a: "Yes, you can easily order for takeaway or message us on WhatsApp for quick pickup." },
+  { q: "Is parking available nearby?", a: "Yes, there is ample parking space available right outside the café." },
+  { q: "Do you host birthday or small events?", a: "Yes, we do! You can book a section of our café for birthdays and small celebrations. Contact us to know more." }
+];
+
 export default function Home() {
+  const [visibleFaqs, setVisibleFaqs] = useState(2);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="w-full relative">
       {/* Background Layering */}
@@ -12,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[105vh] flex items-center justify-center overflow-hidden pt-24 md:pt-32 lg:pt-0 lg:items-center">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20 lg:pt-0 lg:items-center">
         <div className="absolute inset-0 z-0 bg-[#0D0D0D] lg:left-1/2 lg:w-1/2 lg:inset-y-12 lg:right-12 lg:rounded-[3rem] lg:overflow-hidden lg:shadow-2xl">
           <motion.img 
             initial={{ scale: 1.05, opacity: 0 }}
@@ -86,8 +99,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-8 px-6 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto ml-[18px]">
-          <div className="min-w-[24px] md:min-w-[32px] lg:hidden" />
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-6 px-6 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
+          <div className="min-w-[8px] lg:hidden" />
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Interiors", subtitle: "Comfortable & aesthetic seating" },
             { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Fresh Food", subtitle: "Gourmet bites prepared daily" },
@@ -96,23 +109,22 @@ export default function Home() {
           ].map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20, y: i > 1 ? 10 : 0 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.05, duration: 0.3, ease: "easeOut" }}
-              className="min-w-[280px] md:min-w-[400px] lg:min-w-0 aspect-[3/4] lg:aspect-[4/5] snap-start glass-strong rounded-[3rem] overflow-hidden group border border-white/5 shadow-2xl relative will-change-transform-opacity bg-[#0D0D0D] lg:hover:-translate-y-2 lg:hover:rotate-1 lg:hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] lg:transition-all lg:duration-300"
+              initial={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="min-w-[260px] md:min-w-[380px] lg:min-w-0 aspect-[3/4] lg:aspect-[4/5] snap-start glass-strong rounded-[3rem] overflow-hidden group border border-white/5 shadow-2xl relative will-change-transform-opacity bg-[#0D0D0D] lg:hover:-translate-y-2 lg:hover:rotate-1 lg:hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] lg:transition-all lg:duration-300"
             >
-              <motion.img 
-                initial={{ scale: 1.05, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.05 + 0.1 }}
-                src={feature.img} 
-                alt={feature.title} 
-                loading="lazy" 
-                decoding="async" 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04] will-change-transform img-cinematic" 
-              />
+            <motion.img 
+              initial={{ scale: 1.05, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.05 + 0.1 }}
+              src={feature.img} 
+              alt={feature.title} 
+              loading={i < 2 ? "eager" : "lazy"} 
+              decoding="async" 
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04] will-change-transform img-cinematic" 
+            />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-10">
                 <h4 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-widest text-white mb-2">{feature.title}</h4>
@@ -133,6 +145,7 @@ export default function Home() {
 
         <div className="relative max-w-[1400px] mx-auto">
           <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-10 px-6 md:px-12 pb-20 hide-scrollbar snap-x snap-mandatory perspective-1000">
+            <div className="min-w-[8px] lg:hidden" />
             {[
               { icon: Heart, title: "Dates", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=60&w=800&auto=format&fit=crop&fm=webp" },
               { icon: Users, title: "Friends Hangout", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=60&w=800&auto=format&fit=crop&fm=webp" },
@@ -173,6 +186,7 @@ export default function Home() {
         </div>
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-8 px-6 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
+          <div className="min-w-[8px] lg:hidden" />
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Lounge" },
             { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Outdoor Seating" },
@@ -227,14 +241,15 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="bg-[#1A1A1A]/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 border border-white/10 shadow-xl will-change-transform-opacity"
+            className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.01] backdrop-blur-xl rounded-[3rem] p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.15)] will-change-transform-opacity overflow-hidden"
           >
-            <div className="text-center lg:text-left max-w-lg">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 via-transparent to-transparent opacity-50 pointer-events-none" />
+            <div className="relative z-10 text-center lg:text-left max-w-lg">
               <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tight mb-6 leading-tight">Stay <span className="text-gradient">Connected</span></h2>
               <p className="text-text-secondary leading-relaxed font-light text-base opacity-90">Order on WhatsApp or follow us on Instagram for daily vibes and special offers.</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
               <a href="#" className="flex-1 lg:min-w-[160px] flex items-center justify-center space-x-3 px-6 py-4 rounded-full bg-gradient-to-br from-[#B38B4D] to-[#C5A059] border-t border-white/20 border-b-4 border-[#8A6B3A] text-bg-primary hover:scale-[1.05] hover:brightness-110 transition-all duration-300 group shadow-lg hover:shadow-gold-primary/20 active:scale-[0.97] active:border-b-0 active:translate-y-1 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shine-infinite" />
                 <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -273,9 +288,10 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="relative max-w-[1400px] mx-auto">
+        <div className="relative max-w-[1400px] mx-auto perspective-1000">
           <div className="flex overflow-x-auto hide-scrollbar gap-6 px-6 md:px-12 pb-12 snap-x snap-mandatory lg:gap-8">
             <div className="flex gap-6 lg:gap-8">
+              <div className="min-w-[8px] lg:hidden" />
               {[
                 { name: "Rohit Sharma", rating: 5, text: "Amazing ambience and food. The coffee here is truly world-class. Perfect spot for a weekend hangout.", time: "3 days ago", initial: "R" },
                 { name: "Priya Patel", rating: 5, text: "Great place to chill with friends. The staff is very polite and the music is just right. Loved the pasta!", time: "1 week ago", initial: "P" },
@@ -288,11 +304,10 @@ export default function Home() {
               ].map((review, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: "0px" }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="w-[280px] md:w-[320px] aspect-square snap-center glass-strong p-8 rounded-[2.5rem] border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:shadow-gold-primary/10 hover:scale-[1.02] transition-all duration-300 group relative overflow-hidden flex-shrink-0 hardware-accelerated flex flex-col justify-between"
+                  initial={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="w-[280px] md:w-[320px] aspect-square snap-center glass-strong p-8 rounded-[2.5rem] border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:shadow-gold-primary/20 hover:-translate-y-3 hover:rotate-1 transition-all duration-500 group relative overflow-hidden flex-shrink-0 hardware-accelerated flex flex-col justify-between"
                 >
                   <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                     <svg viewBox="0 0 24 24" className="w-8 h-8 fill-white" xmlns="http://www.w3.org/2000/svg">
@@ -388,6 +403,69 @@ export default function Home() {
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg-primary/60 to-transparent" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 relative content-auto bg-bg-secondary/20">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <span className="text-gold-primary text-[10px] tracking-[0.4em] uppercase mb-4 block font-bold">Got Questions?</span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tight mb-6">Frequently Asked <br/>Questions</h2>
+          </div>
+
+          <div className="space-y-2">
+            {faqs.slice(0, visibleFaqs).map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="border-b border-white/10"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
+                >
+                  <span className="text-sm md:text-base font-display font-bold tracking-wide text-white group-hover:text-gold-primary transition-colors pr-4">
+                    {faq.q}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: openFaq === index ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-white/10"
+                  >
+                    <ChevronDown className="w-4 h-4 text-gold-primary" />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-6 text-text-secondary text-sm md:text-base font-light leading-relaxed opacity-80">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+
+          {visibleFaqs < faqs.length && (
+            <div className="mt-12 flex justify-center">
+              <button
+                onClick={() => setVisibleFaqs(prev => Math.min(prev + 2, faqs.length))}
+                className="px-8 py-4 rounded-full bg-transparent border border-gold-primary/40 text-gold-primary hover:bg-gold-primary hover:text-bg-primary transition-all duration-300 text-[10px] uppercase tracking-[0.2em] font-bold shine-effect"
+              >
+                View More
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>

@@ -46,14 +46,16 @@ export default function Menu() {
           className="relative h-32 md:h-40 w-full rounded-2xl overflow-hidden mb-12 border border-white/10 will-change-transform-opacity shadow-2xl"
         >
           <img 
-            src="https://images.unsplash.com/photo-1550966842-2849a2208470?q=60&w=1200&auto=format&fit=crop&fm=webp" 
-            alt="Menu" 
-            className="absolute inset-0 w-full h-full object-cover opacity-40 img-cinematic"
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop&fm=webp" 
+            alt="Premium Menu Background" 
+            className="absolute inset-0 w-full h-full object-cover opacity-70 img-cinematic"
             referrerPolicy="no-referrer"
             fetchPriority="high"
             decoding="async"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
           <div className="absolute inset-0 flex items-center justify-between px-8 md:px-16">
             <div className="flex flex-col justify-center">
               <h1 className="text-2xl md:text-5xl font-display font-bold text-white uppercase tracking-tighter">
@@ -66,73 +68,68 @@ export default function Menu() {
           </div>
         </motion.div>
 
-        {/* Layout with Sidebar Filter */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
-          {/* Sidebar Filter */}
-          <aside className="lg:w-48 flex-shrink-0">
-            <div className="sticky top-32 space-y-3">
-              <p className="text-gold-primary text-[9px] font-bold tracking-[0.3em] uppercase mb-6 ml-2">Filter By</p>
-              <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-4 lg:pb-0 hide-scrollbar">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`flex-shrink-0 px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-all duration-300 border relative overflow-hidden text-left w-full ${
-                      activeCategory === cat 
-                        ? 'text-bg-primary border-gold-primary bg-gold-primary' 
-                        : 'bg-white/5 text-text-secondary border-transparent hover:bg-white/10'
-                    }`}
-                  >
-                    <span className="relative z-10">{cat}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          {/* Speedy Menu Grid */}
-          <div className="flex-grow pb-16">
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={activeCategory}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15 }}
-                className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6"
+        {/* Compact Pill Filter Bar */}
+        <div className="mb-12 sticky top-24 z-20 bg-[#0A0A0A]/80 backdrop-blur-md py-4 -mx-6 px-6 border-b border-white/5">
+          <div className="flex overflow-x-auto gap-3 hide-scrollbar snap-x snap-mandatory max-w-7xl mx-auto">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`flex-shrink-0 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 border snap-start ${
+                  activeCategory === cat 
+                    ? 'bg-gold-primary text-bg-primary border-gold-primary shadow-[0_10px_20px_rgba(197,160,89,0.2)]' 
+                    : 'bg-white/5 text-text-secondary border-white/10 hover:bg-white/10'
+                }`}
               >
-                {filteredItems.map((item, i) => (
-                  <motion.div 
-                    key={item.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.03, duration: 0.2, ease: "easeOut" }}
-                    className="relative aspect-square rounded-xl overflow-hidden group border border-white/5 bg-[#1A1A1A]/20 will-change-transform-opacity lg:hover:-translate-y-1 lg:transition-all lg:duration-300 lg:hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)] hardware-accelerated"
-                  >
-                    <img 
-                      src={item.img} 
-                      alt={item.name} 
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover lg:group-hover:scale-[1.04] lg:transition-transform lg:duration-300 will-change-transform img-cinematic"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300" />
-                    
-                    {/* Overlay Text - Small & Static */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-4">
-                      <h3 className="text-[10px] lg:text-sm font-bold text-white uppercase tracking-wider mb-1">
-                        {item.name}
-                      </h3>
-                      <p className="text-gold-primary font-bold text-[10px] lg:text-sm">
-                        ₹{item.price}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                {cat}
+              </button>
+            ))}
           </div>
+        </div>
+
+        {/* Speedy Menu Grid */}
+        <div className="pb-16">
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={activeCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8"
+            >
+              {filteredItems.map((item, i) => (
+                <motion.div 
+                  key={item.id}
+                  initial={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square rounded-xl overflow-hidden group border border-white/5 bg-[#1A1A1A]/20 will-change-transform-opacity lg:hover:-translate-y-1 lg:transition-all lg:duration-300 lg:hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)] hardware-accelerated"
+                >
+                  <img 
+                    src={item.img} 
+                    alt={item.name} 
+                    loading={i < 4 ? "eager" : "lazy"}
+                    fetchPriority={i < 4 ? "high" : "auto"}
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover lg:group-hover:scale-[1.04] lg:transition-transform lg:duration-300 will-change-transform img-cinematic"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 lg:group-hover:opacity-100 lg:transition-opacity lg:duration-300" />
+                  
+                  {/* Overlay Text - Small & Static */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 lg:p-6">
+                    <h3 className="text-[10px] lg:text-sm font-bold text-white uppercase tracking-wider mb-1">
+                      {item.name}
+                    </h3>
+                    <p className="text-gold-primary font-bold text-[10px] lg:text-sm">
+                      ₹{item.price}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>

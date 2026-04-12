@@ -56,17 +56,13 @@ export default function Gallery() {
         </motion.div>
 
         {/* Category Filters - Mobile Optimized */}
-        <div className="flex overflow-x-auto hide-scrollbar gap-3 mb-16 pb-4 px-12 md:px-12 -mx-6 md:-mx-10 snap-x lg:justify-center lg:gap-4 ml-[50px]">
-          <div className="flex gap-3 px-10 lg:px-0">
+        <div className="flex overflow-x-auto hide-scrollbar gap-3 mb-16 pb-4 -mx-6 md:mx-0 snap-x lg:justify-center lg:gap-4">
+          <div className="flex gap-3 pl-12 md:pl-0">
             {categories.map((cat, i) => (
               <motion.button
                 key={cat}
-                initial={{ 
-                  opacity: 0, 
-                  x: i % 2 === 0 ? -10 : 10,
-                  y: cat === "Lounge" ? 10 : 0 
-                }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ 
                   duration: 0.2, 
                   delay: 0.05 + i * 0.03,
@@ -92,15 +88,10 @@ export default function Gallery() {
               <motion.div
                 layout
                 key={item.id}
-                initial={{ opacity: 0, y: 10, x: i % 3 === 0 ? -5 : i % 3 === 1 ? 0 : 5 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ once: true, margin: "0px" }}
+                initial={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ 
-                  duration: 0.2, 
-                  delay: (i % 3) * 0.03,
-                  ease: "easeOut"
-                }}
                 className="break-inside-avoid relative group overflow-hidden rounded-[2.5rem] cursor-pointer border border-white/5 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] will-change-transform-opacity hardware-accelerated"
               >
                 <div className={`w-full ${item.height} relative overflow-hidden`}>
@@ -108,9 +99,10 @@ export default function Gallery() {
                     src={item.img} 
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05] will-change-transform img-cinematic"
-                    loading="lazy"
+                    loading={i < 3 ? "eager" : "lazy"}
+                    fetchPriority={i < 3 ? "high" : "auto"}
+                    decoding="async"
                     referrerPolicy="no-referrer"
-                    whileHover={{ scale: 1.05 }}
                   />
                   {/* Depth Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />

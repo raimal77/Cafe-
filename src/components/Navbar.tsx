@@ -95,10 +95,10 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center justify-end lg:w-1/4">
             <button
               onClick={handleGetDirections}
-              className="group flex items-center space-x-3 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
+              className="group flex items-center space-x-3 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap"
             >
               <MapPin className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform" />
-              <span>Get Directions</span>
+              <span>Get Direction</span>
             </button>
           </div>
 
@@ -128,7 +128,7 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
               className="relative w-[80%] max-w-sm bg-[#111111] h-full flex flex-col shadow-xl rounded-l-[2.5rem] border-l border-white/5 overflow-hidden will-change-transform hardware-accelerated"
             >
               <div className="p-8 md:p-10 flex flex-col h-full relative z-10">
@@ -185,8 +185,8 @@ export default function Navbar() {
                       className="flex items-center gap-4 w-full px-7 py-5 rounded-full shadow-lg group transition-all duration-300 active:scale-[0.97] border bg-white/5 hover:bg-white/10 border-white/5"
                     >
                       <MapPin className="w-5 h-5 transition-all duration-300 text-text-secondary group-hover:text-gold-primary group-hover:scale-110" />
-                      <span className="font-bold uppercase tracking-[0.2em] text-sm transition-colors text-text-primary group-hover:text-gold-primary">
-                        Get Directions
+                      <span className="font-bold uppercase tracking-[0.2em] text-sm transition-colors text-text-primary group-hover:text-gold-primary whitespace-nowrap">
+                        Get Direction
                       </span>
                     </button>
                   </motion.div>

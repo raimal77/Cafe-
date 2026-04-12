@@ -74,6 +74,7 @@ export default function About() {
               referrerPolicy="no-referrer"
               fetchPriority="high"
               decoding="async"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent opacity-70" />
             <div className="absolute bottom-8 left-8 right-8 bg-black/30 backdrop-blur-sm px-6 py-4 rounded-full border border-white/10 max-w-max">
