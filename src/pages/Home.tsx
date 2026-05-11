@@ -96,10 +96,10 @@ export default function Home() {
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-6 px-4 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto ml-[20px]">
           {[
-            { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Interiors", subtitle: "Comfortable & aesthetic seating" },
-            { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Fresh Food", subtitle: "Gourmet bites prepared daily" },
-            { img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=50&w=600&auto=format&fit=crop&fm=webp", title: "The Vibe", subtitle: "Cinematic sanctuary for focus" },
-            { img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Baristas", subtitle: "Mastering the art of extraction" }
+            { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Interiors", subtitle: "Comfortable & aesthetic seating" },
+            { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Fresh Food", subtitle: "Gourmet bites prepared daily" },
+            { img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=50&w=400&auto=format&fit=crop&fm=webp", title: "The Vibe", subtitle: "Cinematic sanctuary for focus" },
+            { img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Baristas", subtitle: "Mastering the art of extraction" }
           ].map((feature, i) => (
             <motion.div
               key={i}
@@ -140,10 +140,10 @@ export default function Home() {
         <div className="relative max-w-[1400px] mx-auto">
           <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-10 px-4 md:px-12 pb-20 hide-scrollbar snap-x snap-mandatory perspective-1000">
             {[
-              { icon: Heart, title: "Dates", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=50&w=600&auto=format&fit=crop&fm=webp" },
-              { icon: Users, title: "Friends Hangout", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=50&w=600&auto=format&fit=crop&fm=webp" },
-              { icon: Briefcase, title: "Work & Meetings", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=50&w=600&auto=format&fit=crop&fm=webp" },
-              { icon: PartyPopper, title: "Celebrations", img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=50&w=600&auto=format&fit=crop&fm=webp" }
+              { icon: Heart, title: "Dates", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=50&w=400&auto=format&fit=crop&fm=webp" },
+              { icon: Users, title: "Friends Hangout", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=50&w=400&auto=format&fit=crop&fm=webp" },
+              { icon: Briefcase, title: "Work & Meetings", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=50&w=400&auto=format&fit=crop&fm=webp" },
+              { icon: PartyPopper, title: "Celebrations", img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=50&w=400&auto=format&fit=crop&fm=webp" }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -180,12 +180,12 @@ export default function Home() {
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-8 px-4 md:px-12 pb-12 hide-scrollbar snap-x snap-mandatory lg:max-w-[1400px] lg:mx-auto">
           {[
-            { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=50&w=600&auto=format&fit=crop&fm=webp", title: "The Lounge" },
-            { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Outdoor Seating" },
-            { img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Barista Bar" },
-            { img: "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=50&w=600&auto=format&fit=crop&fm=webp", title: "The Roastery" },
-            { img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Atmosphere" },
-            { img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=50&w=600&auto=format&fit=crop&fm=webp", title: "Quiet Corners" }
+            { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=50&w=400&auto=format&fit=crop&fm=webp", title: "The Lounge" },
+            { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Outdoor Seating" },
+            { img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Barista Bar" },
+            { img: "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=50&w=400&auto=format&fit=crop&fm=webp", title: "The Roastery" },
+            { img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Atmosphere" },
+            { img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=50&w=400&auto=format&fit=crop&fm=webp", title: "Quiet Corners" }
           ].map((item, i) => (
             <motion.div
               key={i}
