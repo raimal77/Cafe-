@@ -151,7 +151,7 @@ export default function Contact() {
         {/* Stay Connected Section - Consistent with Homepage */}
         <section className="mb-24 relative px-0 overflow-hidden content-auto">
           <div className="absolute inset-0 z-0 bg-[#0D0D0D]">
-            <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-50 img-cinematic" alt="texture" />
+            <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=50&w=800&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-50 img-cinematic" alt="texture" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#050302] via-[#050302]/90 to-[#050302]" />
           </div>
           <div className="relative z-10">

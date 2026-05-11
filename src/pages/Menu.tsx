@@ -30,28 +30,29 @@ export default function Menu() {
       {/* Visible Background Image */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img 
-          src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1920&auto=format&fit=crop&fm=webp" 
+          src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=50&w=1000&auto=format&fit=crop&fm=webp" 
           alt="Menu Background" 
           className="w-full h-full object-cover opacity-40 brightness-75 mix-blend-overlay img-cinematic"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         {/* Compact Hero Panel */}
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative h-32 md:h-40 w-full rounded-2xl overflow-hidden mb-12 border border-white/10 will-change-transform-opacity shadow-2xl"
+        <div 
+          className="relative h-32 md:h-40 w-full rounded-2xl overflow-hidden mb-12 border border-white/10 shadow-2xl animate-fade-in"
         >
           <img 
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop&fm=webp" 
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=60&w=800&auto=format&fit=crop&fm=webp" 
             alt="Premium Menu Background" 
             className="absolute inset-0 w-full h-full object-cover opacity-70 img-cinematic"
             referrerPolicy="no-referrer"
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
             loading="eager"
           />
           <div className="absolute inset-0 bg-black/30" />
@@ -66,7 +67,7 @@ export default function Menu() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Compact Pill Filter Bar */}
         <div className="mb-12 sticky top-24 z-20 bg-[#0A0A0A]/80 backdrop-blur-md py-4 -mx-6 px-6 border-b border-white/5">

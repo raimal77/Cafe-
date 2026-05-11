@@ -5,17 +5,17 @@ import { ArrowRight, MapPin } from 'lucide-react';
 const categories = ["All", "Interiors & Seating", "Outdoor & Vibes", "Food & Drinks", "Lounge"];
 
 const galleryImages = [
-  { id: 1, category: "Interiors & Seating", title: "The Main Hall", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },
-  { id: 2, category: "Food & Drinks", title: "Signature Brew", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2070&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
-  { id: 3, category: "Outdoor & Vibes", title: "Garden Seating", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
-  { id: 4, category: "Lounge", title: "Cozy Corner", img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=2070&auto=format&fit=crop", height: "h-[320px] md:h-[450px]" },
-  { id: 5, category: "Interiors & Seating", title: "Warm Ambience", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1974&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },
-  { id: 6, category: "Food & Drinks", title: "Gourmet Bites", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
-  { id: 7, category: "Outdoor & Vibes", title: "Evening Glow", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1974&auto=format&fit=crop", height: "h-[380px] md:h-[550px]" },
+  { id: 1, category: "Interiors & Seating", title: "The Main Hall", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },
+  { id: 2, category: "Food & Drinks", title: "Signature Brew", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=60&w=800&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
+  { id: 3, category: "Outdoor & Vibes", title: "Garden Seating", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=800&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
+  { id: 4, category: "Lounge", title: "Cozy Corner", img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=60&w=800&auto=format&fit=crop", height: "h-[320px] md:h-[450px]" },
+  { id: 5, category: "Interiors & Seating", title: "Warm Ambience", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=60&w=800&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },
+  { id: 6, category: "Food & Drinks", title: "Gourmet Bites", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=60&w=800&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
+  { id: 7, category: "Outdoor & Vibes", title: "Evening Glow", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=60&w=800&auto=format&fit=crop", height: "h-[380px] md:h-[550px]" },
   { id: 8, category: "Interiors & Seating", title: "Modern Design", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2074&auto=format&fit=crop", height: "h-[320px] md:h-[450px]" },
-  { id: 9, category: "Food & Drinks", title: "Artisan Coffee", img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1974&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
-  { id: 10, category: "Lounge", title: "Private Nook", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
-  { id: 11, category: "Outdoor & Vibes", title: "Street View", img: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1974&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
+  { id: 9, category: "Food & Drinks", title: "Artisan Coffee", img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=60&w=800&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
+  { id: 10, category: "Lounge", title: "Private Nook", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=60&w=800&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
+  { id: 11, category: "Outdoor & Vibes", title: "Street View", img: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=60&w=800&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
   { id: 12, category: "Food & Drinks", title: "Sweet Treats", img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1964&auto=format&fit=crop", height: "h-[380px] md:h-[550px]" },
 ];
 

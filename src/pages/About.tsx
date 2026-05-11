@@ -61,19 +61,16 @@ export default function About() {
             </div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
-            className="relative h-[500px] md:h-[650px] lg:h-[500px] rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/10 group will-change-transform-opacity hardware-accelerated"
+          <div
+            className="relative h-[500px] md:h-[650px] lg:h-[500px] rounded-[3.5rem] overflow-hidden shadow-2xl border border-white/10 group hardware-accelerated animate-fade-in"
           >
             <img 
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=1200&auto=format&fit=crop&fm=webp" 
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=50&w=800&auto=format&fit=crop&fm=webp" 
               alt="Our Café Vibe" 
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform img-cinematic"
               referrerPolicy="no-referrer"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent opacity-70" />
@@ -81,7 +78,7 @@ export default function About() {
               <p className="text-gold-primary text-[7px] tracking-[0.3em] uppercase mb-1 font-bold">The Vibe</p>
               <p className="text-sm md:text-base font-display font-bold uppercase tracking-widest leading-tight">Comfort, Food & Conversations</p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Why People Love Us / Promises */}
@@ -142,7 +139,7 @@ export default function About() {
           className="py-24 relative overflow-hidden rounded-[3.5rem] bg-white/[0.05] backdrop-blur-md border border-white/10 mb-10 content-auto shadow-2xl will-change-transform-opacity hardware-accelerated"
         >
           <div className="absolute inset-0 opacity-40 bg-[#0D0D0D]">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" alt="Experience" className="w-full h-full object-cover img-cinematic" referrerPolicy="no-referrer" />
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=50&w=800&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" alt="Experience" className="w-full h-full object-cover img-cinematic" referrerPolicy="no-referrer" />
           </div>
           <div className="relative z-10 text-center px-8">
             <motion.div
