@@ -141,8 +141,8 @@ export default function About() {
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="py-24 relative overflow-hidden rounded-[3.5rem] bg-white/[0.05] backdrop-blur-md border border-white/10 mb-10 content-auto shadow-2xl will-change-transform-opacity hardware-accelerated"
         >
-          <div className="absolute inset-0 opacity-5 bg-[#0D0D0D]">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" alt="Experience" className="w-full h-full object-cover grayscale img-cinematic" referrerPolicy="no-referrer" />
+          <div className="absolute inset-0 opacity-40 bg-[#0D0D0D]">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" alt="Experience" className="w-full h-full object-cover img-cinematic" referrerPolicy="no-referrer" />
           </div>
           <div className="relative z-10 text-center px-8">
             <motion.div

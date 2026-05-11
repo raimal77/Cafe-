@@ -29,9 +29,9 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="text-[10px] font-bold tracking-[0.4em] uppercase text-gold-primary mb-8">Connect</h4>
             <ul className="space-y-5">
-              <li><Link to="/contact" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">Visit Us</Link></li>
-              <li><a href="#" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">WhatsApp</a></li>
-              <li><a href="#" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">Instagram</a></li>
+              <li><Link to="/contact" aria-label="Visit Caffcio" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">Visit Us</Link></li>
+              <li><a href="#" aria-label="Contact us on WhatsApp" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">WhatsApp</a></li>
+              <li><a href="#" aria-label="Follow us on Instagram" className="text-text-secondary hover:text-text-primary lg:hover:text-gold-primary lg:hover:translate-x-1 transition-all duration-300 text-sm tracking-widest uppercase block">Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -39,8 +39,8 @@ export default function Footer() {
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] text-text-secondary tracking-[0.2em] uppercase font-bold">
           <p>&copy; {new Date().getFullYear()} Caffcio. All rights reserved.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
-            <a href="#" className="hover:text-gold-primary transition-colors">Privacy</a>
-            <a href="#" className="hover:text-gold-primary transition-colors">Terms</a>
+            <a href="#" aria-label="Privacy Policy" className="hover:text-gold-primary transition-colors">Privacy</a>
+            <a href="#" aria-label="Terms of Service" className="hover:text-gold-primary transition-colors">Terms</a>
           </div>
         </div>
       </div>

@@ -35,25 +35,31 @@ export default function Contact() {
             <form className="space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3">
-                  <label className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Name</label>
+                  <label htmlFor="name" className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Name</label>
                   <input 
                     type="text" 
+                    id="name"
+                    name="name"
                     className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-4 text-text-primary focus:outline-none focus:border-gold-primary/40 focus:ring-1 focus:ring-gold-primary/20 transition-all duration-300 placeholder:text-text-secondary/30 text-sm"
                     placeholder="Your Name"
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Phone</label>
+                  <label htmlFor="phone" className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Phone</label>
                   <input 
                     type="tel" 
+                    id="phone"
+                    name="phone"
                     className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-4 text-text-primary focus:outline-none focus:border-gold-primary/40 focus:ring-1 focus:ring-gold-primary/20 transition-all duration-300 placeholder:text-text-secondary/30 text-sm"
                     placeholder="Mobile Number"
                   />
                 </div>
               </div>
               <div className="space-y-3">
-                <label className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Message</label>
+                <label htmlFor="message" className="block text-[9px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-4">Message</label>
                 <textarea 
+                  id="message"
+                  name="message"
                   rows={4}
                   className="w-full bg-white/5 border border-white/10 rounded-[2rem] px-8 py-5 text-text-primary focus:outline-none focus:border-gold-primary/40 focus:ring-1 focus:ring-gold-primary/20 transition-all duration-300 resize-none placeholder:text-text-secondary/30 text-sm"
                   placeholder="Your Message"
@@ -114,7 +120,7 @@ export default function Contact() {
             transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
             className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 will-change-transform-opacity hardware-accelerated"
           >
-            <div className="rounded-[3rem] overflow-hidden relative h-[300px] lg:h-[350px] border border-white/10 shadow-2xl group flex-1 w-full">
+            <div className="rounded-[3rem] overflow-hidden relative aspect-square h-auto lg:aspect-auto lg:h-[350px] border border-white/10 shadow-2xl group flex-1 w-full">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164132!2d-73.9878441234255!3d40.75797873483563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1712740000000!5m2!1sen!2sin" 
                 width="100%" 
@@ -122,6 +128,7 @@ export default function Contact() {
                 style={{ border: 0 }} 
                 allowFullScreen={true} 
                 loading="lazy" 
+                title="Google Maps Location"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="opacity-100 transition-opacity duration-1000"
               ></iframe>
@@ -144,7 +151,7 @@ export default function Contact() {
         {/* Stay Connected Section - Consistent with Homepage */}
         <section className="mb-24 relative px-0 overflow-hidden content-auto">
           <div className="absolute inset-0 z-0 bg-[#0D0D0D]">
-            <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-20 grayscale img-cinematic" alt="texture" />
+            <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-50 img-cinematic" alt="texture" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#050302] via-[#050302]/90 to-[#050302]" />
           </div>
           <div className="relative z-10">

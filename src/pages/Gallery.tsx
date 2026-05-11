@@ -6,7 +6,7 @@ const categories = ["All", "Interiors & Seating", "Outdoor & Vibes", "Food & Dri
 
 const galleryImages = [
   { id: 1, category: "Interiors & Seating", title: "The Main Hall", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },
-  { id: 2, category: "Food & Drinks", title: "Signature Brew", img: "https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=80&w=2070&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
+  { id: 2, category: "Food & Drinks", title: "Signature Brew", img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2070&auto=format&fit=crop", height: "h-[300px] md:h-[400px]" },
   { id: 3, category: "Outdoor & Vibes", title: "Garden Seating", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070&auto=format&fit=crop", height: "h-[350px] md:h-[500px]" },
   { id: 4, category: "Lounge", title: "Cozy Corner", img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=2070&auto=format&fit=crop", height: "h-[320px] md:h-[450px]" },
   { id: 5, category: "Interiors & Seating", title: "Warm Ambience", img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1974&auto=format&fit=crop", height: "h-[400px] md:h-[600px]" },

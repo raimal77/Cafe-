@@ -32,7 +32,7 @@ export default function Menu() {
         <img 
           src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1920&auto=format&fit=crop&fm=webp" 
           alt="Menu Background" 
-          className="w-full h-full object-cover opacity-10 grayscale brightness-50"
+          className="w-full h-full object-cover opacity-40 brightness-75 mix-blend-overlay img-cinematic"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />

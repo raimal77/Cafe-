@@ -31,11 +31,12 @@ export default function Home() {
             initial={{ scale: 1.05, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.45 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=60&w=1200&auto=format&fit=crop&fm=webp" 
-            alt="Premium cafe meal and ambience" 
+            src="https://files.yappe.in/place/full/the-village-best-family-restaurant-in-kashipur-10466689.webp" 
+            alt="The Village - Premium family restaurant ambience" 
             className="w-full h-full object-cover lg:opacity-50 lg:hover:scale-[1.03] transition-transform duration-300 will-change-transform-opacity animate-float-slow img-cinematic"
             referrerPolicy="no-referrer"
             fetchPriority="high"
+            loading="eager"
             decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/10 to-bg-primary lg:bg-gradient-to-b lg:from-bg-primary/80 lg:via-bg-primary/30 lg:to-bg-primary" />
@@ -103,7 +104,7 @@ export default function Home() {
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Interiors", subtitle: "Comfortable & aesthetic seating" },
             { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Fresh Food", subtitle: "Gourmet bites prepared daily" },
-            { img: "https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Vibe", subtitle: "Cinematic sanctuary for focus" },
+            { img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Vibe", subtitle: "Cinematic sanctuary for focus" },
             { img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Baristas", subtitle: "Mastering the art of extraction" }
           ].map((feature, i) => (
             <motion.div
@@ -187,7 +188,7 @@ export default function Home() {
           {[
             { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Lounge" },
             { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Outdoor Seating" },
-            { img: "https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Barista Bar" },
+            { img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Barista Bar" },
             { img: "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=60&w=800&auto=format&fit=crop&fm=webp", title: "The Roastery" },
             { img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Atmosphere" },
             { img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=60&w=800&auto=format&fit=crop&fm=webp", title: "Quiet Corners" }
@@ -229,7 +230,7 @@ export default function Home() {
       {/* Stay Connected Section */}
       <section className="py-24 relative px-6 overflow-hidden content-auto">
         <div className="absolute inset-0 z-0 bg-[#0D0D0D]">
-          <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-20 grayscale img-cinematic" alt="texture" />
+          <img src="https://images.unsplash.com/photo-1495474472205-51f750c07a16?q=60&w=1200&auto=format&fit=crop&fm=webp" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-50 img-cinematic" alt="texture" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050302] via-[#050302]/90 to-[#050302]" />
         </div>
         <div className="max-w-5xl mx-auto relative z-10">
@@ -393,6 +394,7 @@ export default function Home() {
                 style={{ border: 0 }} 
                 allowFullScreen={true} 
                 loading="lazy" 
+                title="Google Maps Location"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="opacity-80 group-hover:opacity-100 transition-opacity duration-1000"
               ></iframe>
@@ -419,6 +421,7 @@ export default function Home() {
                 className="border-b border-white/10"
               >
                 <button
+                  aria-expanded={openFaq === index}
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
                 >

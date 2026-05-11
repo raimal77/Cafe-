@@ -79,6 +79,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? 'page' : undefined}
                 className={`flex items-center gap-1.5 text-[10px] lg:text-xs tracking-[0.25em] uppercase transition-all duration-500 relative group font-bold lg:hover:bg-transparent lg:after:content-[''] lg:after:absolute lg:after:-bottom-2 lg:after:left-0 lg:after:right-0 lg:after:h-[1px] lg:after:bg-gold-primary lg:after:scale-x-0 lg:hover:after:scale-x-100 lg:after:transition-transform lg:after:origin-center lg:after:duration-300 ${
                   location.pathname === link.path 
                     ? 'text-gold-primary lg:after:scale-x-100' 
@@ -106,6 +107,8 @@ export default function Navbar() {
           <button
             className="lg:hidden text-text-primary p-2 hover:text-gold-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Open Mobile Menu"
+            aria-expanded={isMobileMenuOpen}
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -140,6 +143,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 group active:scale-90"
+                    aria-label="Close Mobile Menu"
                   >
                     <ArrowRight className="w-5 h-5 text-text-secondary group-hover:text-gold-primary transition-colors" />
                   </button>
